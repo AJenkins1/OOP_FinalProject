@@ -43,14 +43,8 @@ public class Day {
 		return schedules;
 	}
 
-	public void setSchedules(Schedule plan) {
-		schedules.add(plan);
-	}
-
-	public void removeSchedules(Schedule plan) {
-		if (schedules.contains(plan)) {
-			schedules.remove(plan);
-		}
+	public void setSchedules(ArrayList<Schedule> schedules) {
+		this.schedules = schedules;
 	}
 
 }

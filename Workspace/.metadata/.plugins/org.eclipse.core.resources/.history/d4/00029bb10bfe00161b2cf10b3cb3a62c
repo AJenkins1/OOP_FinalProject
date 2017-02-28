@@ -47,10 +47,4 @@ public class Day {
 		schedules.add(plan);
 	}
 
-	public void removeSchedules(Schedule plan) {
-		if (schedules.contains(plan)) {
-			schedules.remove(plan);
-		}
-	}
-
 }

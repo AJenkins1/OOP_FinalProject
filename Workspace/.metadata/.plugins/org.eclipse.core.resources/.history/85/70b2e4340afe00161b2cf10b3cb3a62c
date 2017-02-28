@@ -8,9 +8,6 @@ public class Schedule {
 	private int endingMinute;
 	private boolean blockSites;
 
-	Schedule(String plans, int beginingHour, int endingHour, int beginingMinute, int endingMinute, boolean blockSites){
-		
-	}
 	public String getPlans() {
 		return plans;
 	}

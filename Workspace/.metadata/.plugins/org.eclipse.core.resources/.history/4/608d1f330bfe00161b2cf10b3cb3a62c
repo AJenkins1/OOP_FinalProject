@@ -7,45 +7,24 @@ public class User {
 	private String name;
 	private ArrayList<String> blockedWebsites;
 	private BankAccount account;
-	private ArrayList<Day> scheduledDates;
-
+	private ArrayList<Day> plans;
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public ArrayList<String> getBlockedWebsites() {
 		return blockedWebsites;
 	}
-
 	public void setBlockedWebsites(ArrayList<String> blockedWebsites) {
 		this.blockedWebsites = blockedWebsites;
 	}
-
 	public BankAccount getAccount() {
 		return account;
 	}
-
 	public void setAccount(BankAccount account) {
 		this.account = account;
-	}
-
-	public ArrayList<Day> getScheduledDates() {
-		return scheduledDates;
-	}
-
-	public void addScheduledDates(Day plans) {
-		this.scheduledDates.add(plans);
-	}
-
-	public void removeScheduledDates(Day thisDaysPlans) {
-		if (this.scheduledDates.contains(thisDaysPlans)) {
-			this.scheduledDates.remove(thisDaysPlans);
-		}
-		;
 	}
 
 }

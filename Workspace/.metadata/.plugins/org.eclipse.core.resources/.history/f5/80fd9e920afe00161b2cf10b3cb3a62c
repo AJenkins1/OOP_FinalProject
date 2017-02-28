@@ -39,18 +39,4 @@ public class Day {
 		this.year = year;
 	}
 
-	public ArrayList<Schedule> getSchedules() {
-		return schedules;
-	}
-
-	public void setSchedules(Schedule plan) {
-		schedules.add(plan);
-	}
-
-	public void removeSchedules(Schedule plan) {
-		if (schedules.contains(plan)) {
-			schedules.remove(plan);
-		}
-	}
-
 }

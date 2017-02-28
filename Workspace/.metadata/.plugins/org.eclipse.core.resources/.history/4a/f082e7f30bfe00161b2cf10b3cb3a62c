@@ -33,17 +33,17 @@ public class User {
 		this.account = account;
 	}
 
-	public ArrayList<Day> getScheduledDates() {
+	public ArrayList<Day> getPlans() {
 		return scheduledDates;
 	}
 
-	public void addScheduledDates(Day plans) {
+	public void setPlans(Day plans) {
 		this.scheduledDates.add(plans);
 	}
 
-	public void removeScheduledDates(Day thisDaysPlans) {
-		if (this.scheduledDates.contains(thisDaysPlans)) {
-			this.scheduledDates.remove(thisDaysPlans);
+	public void removePlans(Day plans) {
+		if (this.scheduledDates.contains(plans)) {
+			this.scheduledDates.remove(plans);
 		}
 		;
 	}
