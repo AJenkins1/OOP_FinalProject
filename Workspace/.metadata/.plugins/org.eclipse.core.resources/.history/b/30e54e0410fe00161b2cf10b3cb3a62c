@@ -14,11 +14,11 @@ public class Logic {
 
 	// TimeManager
 	public static void makePlans() {
-		
+
 	}
 
 	public static void checkForScheduleOverlap() {
-		
+
 	}
 
 	// Budgeter

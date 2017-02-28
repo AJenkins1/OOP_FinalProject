@@ -5,20 +5,16 @@ import models.BankAccount;
 public class Logic {
 	// Universal
 	public static void blockSites() {
-		
-	}
 
-	public static void newUser() {
-		
 	}
 
 	// TimeManager
 	public static void makePlans() {
-		
+
 	}
 
 	public static void checkForScheduleOverlap() {
-		
+
 	}
 
 	// Budgeter

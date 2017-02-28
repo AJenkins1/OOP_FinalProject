@@ -9,16 +9,16 @@ public class Logic {
 	}
 
 	public static void newUser() {
-		
+
 	}
 
 	// TimeManager
 	public static void makePlans() {
-		
+
 	}
 
 	public static void checkForScheduleOverlap() {
-		
+
 	}
 
 	// Budgeter
