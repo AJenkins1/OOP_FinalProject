@@ -5,7 +5,6 @@ public class BankAccount {
 	private final String bankUserID;
 	private final String bankAccountNumber;
 	private int balance = 0;
-	private int minimumBalance;
 	private boolean blockSites;
 
 	public BankAccount() {
@@ -62,14 +61,6 @@ public class BankAccount {
 
 	public boolean isBlockSites() {
 		return blockSites;
-	}
-
-	public int getMinumumBalance() {
-		return minimumBalance;
-	}
-
-	public void setMinumumBalance(int minumumBalance) {
-		this.minimumBalance = minumumBalance;
 	}
 
 	@Override

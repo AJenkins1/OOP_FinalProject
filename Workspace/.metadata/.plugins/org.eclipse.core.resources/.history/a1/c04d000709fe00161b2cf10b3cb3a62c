@@ -5,9 +5,7 @@ public class BankAccount {
 	private final String bankUserID;
 	private final String bankAccountNumber;
 	private int balance = 0;
-	private int minimumBalance;
 	private boolean blockSites;
-
 	public BankAccount() {
 		bankName = "[Unknown]";
 		bankUserID = "[Unknown]";
@@ -46,15 +44,15 @@ public class BankAccount {
 		checkBlockSites();
 		return balance;
 	}
-
-	public void checkBlockSites() {
-		if (balance <= minimumBalance) {
+	
+	public void checkBlockSites(){
+		if(balance <= minimumBalance) {
 			blockSites = true;
-		} else if (balance > minimumBalance) {
+		}
+		else if(balance > minimumBalance){
 			blockSites = false;
 		}
 	}
-
 	public int addToBalance(int addedAmmount) {
 		balance += addedAmmount;
 		return balance;
@@ -62,14 +60,6 @@ public class BankAccount {
 
 	public boolean isBlockSites() {
 		return blockSites;
-	}
-
-	public int getMinumumBalance() {
-		return minimumBalance;
-	}
-
-	public void setMinumumBalance(int minumumBalance) {
-		this.minimumBalance = minumumBalance;
 	}
 
 	@Override

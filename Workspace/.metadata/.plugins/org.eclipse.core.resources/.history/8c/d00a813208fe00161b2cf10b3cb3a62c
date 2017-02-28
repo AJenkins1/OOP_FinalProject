@@ -1,15 +1,15 @@
 package models;
 
-public class Day extends Schedule{
+public class Day {
 
 	private int numericDay;
 	private String month;
 	private int year;
 	
 	public Day(int numericDay, String month, int year) {
-		this.year = year;
 		this.numericDay = numericDay;
 		this.month = month;
+		this.year = year;
 	}
 
 	public int getNumericDay() {

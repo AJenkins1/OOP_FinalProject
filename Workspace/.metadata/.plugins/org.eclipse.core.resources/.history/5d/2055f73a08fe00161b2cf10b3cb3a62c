@@ -1,6 +1,6 @@
 package models;
 
-public class Day extends Schedule{
+public class Day {
 
 	private int numericDay;
 	private String month;
