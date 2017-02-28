@@ -1,51 +1,8 @@
 package app;
 
-import java.util.ArrayList;
-
 import models.BankAccount;
 
 public class Budgeter {
-	public static ArrayList<BankAccount> accounts = new ArrayList<>();
 
-	public static void displayBankAccount() {
-
-	}
-
-	public static String addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
-		BankAccount newAccount = new BankAccount(bankName, bankUserID, bankAccountNumber);
-		accounts.add(newAccount);
-		return "The Account has been added";
-	}
-
-	public static String removeBankAccount(BankAccount account) {
-		if (accounts.contains(account)) {
-			accounts.remove(account);
-			return "The account has been removed.";
-		} else {
-			return "This account does not exist with this user.";
-		}
-	}
-
-	public static int displayBalance(BankAccount account) {
-		return account.getBalance();
-	}
-
-	public static String addToBalance(int addedAmmount, BankAccount account) {
-		if (account.getBalance() < 0 && account.getBalance() + addedAmmount > 0) {
-			account.addToBalance(addedAmmount);
-			return "You are no longer at a negative balance";
-		} else {
-			account.addToBalance(addedAmmount);
-			return "The ammount has been added to the account";
-		}
-	}
-
-	public static String removeFromBalance(int ammountRemoved, BankAccount account) {
-		account.removeFromBalance(ammountRemoved);
-		if (account.getBalance() < 0) {
-			return "You have dipped into negative funds";
-		} else {
-			return "The funds have been removed";
-		}
-	}
+	
 }

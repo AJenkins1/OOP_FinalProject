@@ -1,23 +1,31 @@
 package app;
 
+import java.util.ArrayList;
+
 import models.BankAccount;
 
-public class Logic {
-	// Universal
-	public static void blockSites() {
+public class Budgeter {
+	public static ArrayList<BankAccount> accounts = new ArrayList<>();
+
+	public static void displayBankAccount() {
 
 	}
 
-	// TimeManager
-	public static void makePlans() {
-
+	public static String addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
+		BankAccount newAccount = new BankAccount(bankName, bankUserID, bankAccountNumber);
+		accounts.add(newAccount);
+		return "The Account has been added";
 	}
 
-	public static void checkForScheduleOverlap() {
-
+	public static String removeBankAccount(BankAccount account) {
+		if (accounts.contains(account)) {
+			accounts.remove(account);
+			return "The account has been removed.";
+		} else {
+			return "This account does not exist with this user.";
+		}
 	}
 
-	// Budgeter
 	public static int displayBalance(BankAccount account) {
 		return account.getBalance();
 	}

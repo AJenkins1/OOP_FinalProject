@@ -9,14 +9,6 @@ public class Logic {
 	}
 
 	// TimeManager
-	public static void makePlans() {
-
-	}
-
-	public static void checkForScheduleOverlap() {
-
-	}
-
 	// Budgeter
 	public static int displayBalance(BankAccount account) {
 		return account.getBalance();

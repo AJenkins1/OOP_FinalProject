@@ -2,22 +2,8 @@ package app;
 
 import models.BankAccount;
 
-public class Logic {
-	// Universal
-	public static void blockSites() {
+public class Budgeter {
 
-	}
-
-	// TimeManager
-	public static void makePlans() {
-
-	}
-
-	public static void checkForScheduleOverlap() {
-
-	}
-
-	// Budgeter
 	public static int displayBalance(BankAccount account) {
 		return account.getBalance();
 	}
