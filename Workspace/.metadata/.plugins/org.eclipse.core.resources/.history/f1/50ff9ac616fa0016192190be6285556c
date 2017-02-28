@@ -1,0 +1,18 @@
+package app;
+
+public class Budgeter {
+	public static void displayBankAccount() {
+
+	}
+
+	public static void addBankAccount() {
+
+	}
+
+	public static void removeBankAccount() {
+
+	}
+	public static void displayBalance(BankAccount) {
+		
+	}
+}

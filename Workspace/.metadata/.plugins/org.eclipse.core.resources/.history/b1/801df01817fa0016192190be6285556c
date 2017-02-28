@@ -1,0 +1,22 @@
+package app;
+
+import models.BankAccount;
+
+public class Budgeter {
+	BankAccount account;
+	public static void displayBankAccount() {
+
+	}
+
+	public static void addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
+
+	}
+
+	public static void removeBankAccount() {
+
+	}
+	public static void displayBalance(BankAccount account) {
+		
+	}
+	
+}

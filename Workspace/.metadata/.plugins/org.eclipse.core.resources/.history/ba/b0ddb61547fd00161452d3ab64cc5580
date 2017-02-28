@@ -1,0 +1,27 @@
+package app;
+
+import java.util.ArrayList;
+
+import models.*;
+
+public class Logic {
+	public static ArrayList<User> users = new ArrayList<>(); 
+	public static void run() {
+		System.out.println("hello");
+	}
+	
+	public static User newUser(String userName, String plans, int hour, int minute, int date, int year, String month, String dayName) {
+		Day newDay = new Day(date, year, month, dayName);
+		Schedule newSchedule = new Schedule(newDay, plans, hour, minute);
+		
+		User newUser = new User(userName);
+		
+		newUser.setSchedule(newSchedule);
+		
+		return newUser;
+	}
+	
+	public static void userFavOnlineStores(ArrayList<String> favOnlineStores) {
+		
+	}
+}

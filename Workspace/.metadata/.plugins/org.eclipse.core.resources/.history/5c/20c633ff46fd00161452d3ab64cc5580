@@ -1,0 +1,62 @@
+package models;
+
+public class Day {
+
+	private int date;
+	private int year;
+	private String name;
+	private String month;
+
+	public Day(int date, int year, String month, String name) {
+		setDate(date);
+		setYear(year);
+		setMonth(month);
+		setName(name);
+	}
+
+	public int getDate() {
+		return date;
+	}
+
+	public void setDate(int date) {
+		this.date = date;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		if (name != null && !name.isEmpty()) {
+			this.name = name;
+		}
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		if (month != null && !month.isEmpty()) {
+			this.month = month;
+		}
+	}
+
+	@Override
+
+	public String toString() {
+		StringBuilder retVal = new StringBuilder();
+
+		retVal.append(getMonth() + getDate() + ", " + getYear());
+
+		return retVal.toString();
+	}
+}

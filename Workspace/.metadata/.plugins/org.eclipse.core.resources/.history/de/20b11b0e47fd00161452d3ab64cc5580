@@ -1,0 +1,61 @@
+package models;
+
+import java.util.ArrayList;
+
+public class User {
+
+	private String name;
+	private ArrayList<String> favWebsites;
+	private Schedule schedule;
+	private BankAccount account;
+
+	public User(String name) {
+		setName(name);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		if (name != null && !name.isEmpty()) {
+			this.name = name;
+		}
+	}
+
+	public ArrayList<String> getFavWebsites() {
+		return favWebsites;
+	}
+
+	public void setFavWebsites(ArrayList<String> favWebsites) {
+		this.favWebsites = favWebsites;
+	}
+
+	public Schedule getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(Schedule schedule) {
+		this.schedule = schedule;
+	}
+
+	@Override
+
+	public String toString() {
+		StringBuilder retVal = new StringBuilder();
+
+		retVal.append("Name: " + getName());
+		retVal.append("\nSchedule: " + getSchedule());
+		retVal.append("\nTimes for Working: " + getSchedule().getHour() + ":" + getSchedule().getMinute());
+
+		return retVal.toString();
+	}
+
+	public BankAccount getAccount() {
+		return account;
+	}
+
+	public void setAccount(BankAccount account) {
+		this.account = account;
+	}
+}

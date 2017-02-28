@@ -1,0 +1,33 @@
+package app;
+
+import java.util.ArrayList;
+
+import models.BankAccount;
+
+public class Budgeter {
+	public static ArrayList<BankAccount> accounts = new ArrayList<>();
+
+	public static void displayBankAccount() {
+
+	}
+
+	public static void addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
+
+	}
+
+	public static void removeBankAccount() {
+		
+	}
+
+	public static void displayBalance(BankAccount account) {
+		account.getBalance();
+	}
+
+	public static void addToBalance(int addedAmmount, BankAccount account) {
+		account.addToBalance(addedAmmount);
+	}
+
+	public static void removeFromBalance(int ammountRemoved, BankAccount account) {
+		account.removeFromBalance(ammountRemoved);
+	}
+}
