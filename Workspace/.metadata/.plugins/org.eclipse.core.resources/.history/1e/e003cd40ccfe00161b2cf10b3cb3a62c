@@ -20,8 +20,7 @@ public class Logic {
 
 	// TimeManager
 	public static void makePlans() {
-	
-		checkForScheduleOverlap();
+
 	}
 
 	public static void checkForScheduleOverlap() {

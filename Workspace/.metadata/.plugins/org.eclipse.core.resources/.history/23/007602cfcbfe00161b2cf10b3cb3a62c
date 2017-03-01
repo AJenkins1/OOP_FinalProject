@@ -14,14 +14,12 @@ public class Logic {
 	}
 
 	public static void newUser(String name) {
-		User newUser = new User(name);
-		users.add(newUser);
+		User newUser = User(name);
 	}
 
 	// TimeManager
 	public static void makePlans() {
-	
-		checkForScheduleOverlap();
+
 	}
 
 	public static void checkForScheduleOverlap() {
