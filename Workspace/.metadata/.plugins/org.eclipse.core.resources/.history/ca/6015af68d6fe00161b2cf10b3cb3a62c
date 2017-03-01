@@ -26,6 +26,10 @@ public class BankAccount {
 		return bankUserID;
 	}
 
+	public String getBankAccountNumber() {
+		return bankAccountNumber;
+	}
+
 	public int getBalance() {
 		return balance;
 	}
@@ -70,6 +74,8 @@ public class BankAccount {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Bank Name: ");
 		sb.append(bankName);
+		sb.append("\nAccount Number: ");
+		sb.append(bankAccountNumber);
 		sb.append("\nBalance: ");
 		sb.append(balance);
 		return sb.toString();

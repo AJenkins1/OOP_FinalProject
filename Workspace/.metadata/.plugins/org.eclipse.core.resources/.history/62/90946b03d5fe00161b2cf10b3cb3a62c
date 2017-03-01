@@ -24,7 +24,6 @@ public class Logic {
 	public static void makePlans(int numericDay, String month, int year, String plans, int beginingHour, int endingHour, int beginingMinute, int endingMinute, boolean blockSites) {
 		Schedule newPlans = new Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, blockSites);
 		Day newDay = new Day(numericDay, month, year);
-		
 		newDay.setSchedules(newPlans);
 		checkForScheduleOverlap();
 	}
