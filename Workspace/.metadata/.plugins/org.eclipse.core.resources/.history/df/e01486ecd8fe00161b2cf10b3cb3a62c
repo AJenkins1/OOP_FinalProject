@@ -22,32 +22,24 @@ public class Logic {
 	}
 
 	// TimeManager
-	public static String makePlans(int numericDay, String month, int year, String plans, int beginingHour,
-			int endingHour, int beginingMinute, int endingMinute, boolean blockSites) {
+	public static String makePlans(int numericDay, String month, int year, String plans, int beginingHour, int endingHour, int beginingMinute, int endingMinute, boolean blockSites) {
 		Schedule newPlans = new Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, blockSites);
 		Day newDay = new Day(numericDay, month, year);
 		ArrayList<Schedule> compare = newDay.getSchedules();
-		if (compare.contains(newPlans)) {
+		if(compare.contains(newPlans)) {
 			return "You have already made these plans.";
 		} else {
 			newDay.setSchedules(newPlans);
-			if (checkForScheduleOverlap(newDay)) {
+			if(checkForScheduleOverlap(newDay)) {
 				return "You planned over this time already.";
 			} else {
-				return "Plans added";
+			return "Plans added";
 			}
 		}
 	}
 
 	public static boolean checkForScheduleOverlap(Day newDay) {
-		if (currentUser.getScheduledDates().contains(newDay)) {
-			for (int i = 0; i < currentUser.getScheduledDates().size(); i++) {
-				if (currentUser.getScheduledDates().get(i).getMonth().equals(newDay.getMonth())) {
-					if (currentUser.getScheduledDates().get(i).getNumericDay() == newDay.getNumericDay()) {
-						currentUser.getScheduledDates().get(i).setSchedules(newDay.getSchedules().get(0));
-					}
-				}
-			}
+		if(currentUser.getScheduledDates().contains(newDay)) {
 			return true;
 		} else {
 			return false;

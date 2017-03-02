@@ -41,13 +41,6 @@ public class Logic {
 
 	public static boolean checkForScheduleOverlap(Day newDay) {
 		if (currentUser.getScheduledDates().contains(newDay)) {
-			for (int i = 0; i < currentUser.getScheduledDates().size(); i++) {
-				if (currentUser.getScheduledDates().get(i).getMonth().equals(newDay.getMonth())) {
-					if (currentUser.getScheduledDates().get(i).getNumericDay() == newDay.getNumericDay()) {
-						currentUser.getScheduledDates().get(i).setSchedules(newDay.getSchedules().get(0));
-					}
-				}
-			}
 			return true;
 		} else {
 			return false;

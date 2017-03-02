@@ -44,7 +44,7 @@ public class Logic {
 			for (int i = 0; i < currentUser.getScheduledDates().size(); i++) {
 				if (currentUser.getScheduledDates().get(i).getMonth().equals(newDay.getMonth())) {
 					if (currentUser.getScheduledDates().get(i).getNumericDay() == newDay.getNumericDay()) {
-						currentUser.getScheduledDates().get(i).setSchedules(newDay.getSchedules().get(0));
+
 					}
 				}
 			}
