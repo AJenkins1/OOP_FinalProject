@@ -13,7 +13,7 @@ public class BankAccount {
 		blockSites = false;
 	}
 
-	public BankAccount(String bankName, String bankUserID) {
+	public BankAccount(String bankName, String bankUserID, String bankAccountNumber) {
 		this.bankName = bankName;
 		this.bankUserID = bankUserID;
 	}
@@ -43,7 +43,7 @@ public class BankAccount {
 	public void checkBlockSites() {
 		if (balance <= minimumBalance) {
 			blockSites = true;
-		} else {
+		} else if (balance > minimumBalance) {
 			blockSites = false;
 		}
 	}

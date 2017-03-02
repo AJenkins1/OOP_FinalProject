@@ -10,7 +10,7 @@ public class User {
 	private ArrayList<Day> scheduledDates;
 
 	public User(String name) {
-		setName(name);
+		this.name = name;
 	}
 
 	public String getName() {
@@ -18,10 +18,7 @@ public class User {
 	}
 
 	public void setName(String name) {
-		if (name != null & !name.isEmpty()) {
-			this.name = name;
-		}
-		
+		this.name = name;
 	}
 
 	public ArrayList<String> getBlockedWebsites() {
@@ -54,8 +51,8 @@ public class User {
 		}
 	}
 
-	public String addBankAccount(String bankName, String bankUserID) {
-		BankAccount newAccount = new BankAccount(bankName, bankUserID);
+	public String addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
+		BankAccount newAccount = new BankAccount(bankName, bankUserID, bankAccountNumber);
 		accounts.add(newAccount);
 		return "The Account has been added";
 	}

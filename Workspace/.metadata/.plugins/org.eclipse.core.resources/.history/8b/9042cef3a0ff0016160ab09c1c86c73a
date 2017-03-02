@@ -10,9 +10,9 @@ public class Day {
 	private ArrayList<Schedule> schedules = new ArrayList<Schedule>();
 
 	public Day(int numericDay, String month, int year) {
-		setYear(year);
-		setNumericDay(numericDay);
-		setMonth(month);
+		this.year = year;
+		this.numericDay = numericDay;
+		this.month = month;
 	}
 
 	public int getNumericDay() {

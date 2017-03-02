@@ -40,8 +40,7 @@ public class Logic {
 	}
 
 	public static boolean checkForScheduleOverlap(Day newDay) {
-		if (currentUser.getScheduledDates().contains(newDay.getMonth())
-				&& currentUser.getScheduledDates().contains(newDay.getNumericDay())) {
+		if (currentUser.getScheduledDates().contains(newDay)) {
 			for (int i = 0; i < currentUser.getScheduledDates().size(); i++) {
 				if (currentUser.getScheduledDates().get(i).getMonth().equals(newDay.getMonth())) {
 					if (currentUser.getScheduledDates().get(i).getNumericDay() == newDay.getNumericDay()) {
@@ -64,9 +63,6 @@ public class Logic {
 		if (account.getBalance() < 0 && account.getBalance() + addedAmmount > 0) {
 			account.addToBalance(addedAmmount);
 			return "You are no longer at a negative balance";
-		} else if (account.getBalance() > account.getMinumumBalance()) {
-			account.addToBalance(addedAmmount);
-			return "You are above your minumum budget.";
 		} else {
 			account.addToBalance(addedAmmount);
 			return "The ammount has been added to the account";
@@ -77,8 +73,6 @@ public class Logic {
 		account.removeFromBalance(ammountRemoved);
 		if (account.getBalance() < 0) {
 			return "You have dipped into negative funds";
-		} else if (account.getBalance() < account.getMinumumBalance()) {
-			return "You are now below your alloted minumum balance";
 		} else {
 			return "The funds have been removed";
 		}

@@ -64,9 +64,6 @@ public class Logic {
 		if (account.getBalance() < 0 && account.getBalance() + addedAmmount > 0) {
 			account.addToBalance(addedAmmount);
 			return "You are no longer at a negative balance";
-		} else if (account.getBalance() > account.getMinumumBalance()) {
-			account.addToBalance(addedAmmount);
-			return "You are above your minumum budget.";
 		} else {
 			account.addToBalance(addedAmmount);
 			return "The ammount has been added to the account";

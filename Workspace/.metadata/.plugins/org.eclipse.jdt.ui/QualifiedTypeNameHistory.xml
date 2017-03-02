@@ -2,7 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="interfaces.Subscribable"/>
 <fullyQualifiedTypeName name="interfaces.Publishable"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="models.BankAccount"/>
 <fullyQualifiedTypeName name="java.time.Month"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

@@ -54,7 +54,7 @@ public class User {
 		}
 	}
 
-	public String addBankAccount(String bankName, String bankUserID) {
+	public String addBankAccount(String bankName, String bankUserID, String bankAccountNumber) {
 		BankAccount newAccount = new BankAccount(bankName, bankUserID);
 		accounts.add(newAccount);
 		return "The Account has been added";

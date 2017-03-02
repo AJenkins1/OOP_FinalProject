@@ -43,7 +43,7 @@ public class BankAccount {
 	public void checkBlockSites() {
 		if (balance <= minimumBalance) {
 			blockSites = true;
-		} else {
+		} else if (balance > minimumBalance) {
 			blockSites = false;
 		}
 	}
