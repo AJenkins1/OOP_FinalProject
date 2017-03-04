@@ -9,12 +9,7 @@ public class Schedule {
 	private boolean blockSites;
 
 	public Schedule(String plans, int beginingHour, int endingHour, int beginingMinute, int endingMinute, boolean blockSites){
-		setPlans(plans);
-		setBeginingHour(beginingHour);
-		setEndingHour(endingHour);
-		setBeginingMinute(beginingMinute);
-		setEndingMinute(endingMinute);
-		setBlockSites(blockSites);
+		
 	}
 	public String getPlans() {
 		return plans;

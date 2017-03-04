@@ -14,7 +14,6 @@ public class Schedule {
 		setEndingHour(endingHour);
 		setBeginingMinute(beginingMinute);
 		setEndingMinute(endingMinute);
-		setBlockSites(blockSites);
 	}
 	public String getPlans() {
 		return plans;
