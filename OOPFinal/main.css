@@ -1,0 +1,12 @@
+body{
+    background-color: red;
+    text-align: center;
+    
+}
+
+#budgeter{
+    text-align: left;
+}
+#calendar{
+    text-align: right;
+}
