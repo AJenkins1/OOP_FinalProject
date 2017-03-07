@@ -8,8 +8,20 @@ import models.Schedule;
 import models.User;
 
 public class Logic {
-	public static ArrayList<User> users;
-	public static User currentUser;
+	public static ArrayList<User> users = new ArrayList<>();
+	public static User currentUser = new User();
+	
+	public static void run() {
+		newUser("Scott");
+		String retVal = makePlans(currentUser, 7, "March", 2017, "Test code", 3, 4, 20, 50, false);
+		System.out.println(retVal);
+		BankAccount ba = new BankAccount("USAA", "123456");
+		System.out.println(displayBalance(ba));
+		addToBalance(500000, ba);
+		System.out.println(displayBalance(ba));
+		removeFromBalance(239001, ba);
+		System.out.println(displayBalance(ba));
+	}
 
 	// Universal
 	public static void blockSites() {
@@ -18,11 +30,13 @@ public class Logic {
 
 	public static void newUser(String name) {
 		User newUser = new User(name);
+		currentUser = newUser;
+		System.out.println(currentUser.toString());
 		users.add(newUser);
 	}
 
 	// TimeManager
-	public static String makePlans(int numericDay, String month, int year, String plans, int beginingHour,
+	public static String makePlans(User user, int numericDay, String month, int year, String plans, int beginingHour,
 			int endingHour, int beginingMinute, int endingMinute, boolean blockSites) {
 		Schedule newPlans = new Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, blockSites);
 		Day newDay = new Day(numericDay, month, year);
@@ -31,6 +45,7 @@ public class Logic {
 			return "You have already made these plans.";
 		} else {
 			newDay.setSchedules(newPlans);
+			currentUser.addScheduledDates(newDay);
 			if (checkForScheduleOverlap(newDay)) {
 				return "You planned over this time already.";
 			} else {

@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class User {
 	public ArrayList<BankAccount> accounts = new ArrayList<>();
 	private String name;
-	private ArrayList<String> blockedWebsites;
+	private ArrayList<String> blockedWebsites = new ArrayList<>();
 	private BankAccount account;
-	private ArrayList<Day> scheduledDates;
+	private ArrayList<Day> scheduledDates = new ArrayList<>();
 
+	public User() {
+		
+	}
+	
 	public User(String name) {
 		setName(name);
 	}
@@ -72,5 +76,15 @@ public class User {
 	public BankAccount getBankAccount() {
 
 		return account;
+	}
+	
+	@Override
+	
+	public String toString() {
+		StringBuilder retVal = new StringBuilder();
+		
+		retVal.append(getName());
+		
+		return retVal.toString();
 	}
 }

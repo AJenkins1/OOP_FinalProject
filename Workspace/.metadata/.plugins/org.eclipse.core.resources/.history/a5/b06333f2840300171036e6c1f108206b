@@ -1,0 +1,99 @@
+package app;
+
+import java.util.ArrayList;
+
+import models.BankAccount;
+import models.Day;
+import models.Schedule;
+import models.User;
+
+public class Logic {
+	public static ArrayList<User> users;
+	public static User currentUser;
+	
+	public static void run() {
+		newUser("Scott");
+		String retVal = makePlans(7, "March", 2017, "Test code", 3, 4, 20, 50, false);
+		System.out.println(retVal);
+		BankAccount ba = new BankAccount("USAA", "123456");
+		displayBalance(ba);
+		addToBalance(500000, ba);
+		displayBalance(ba);
+		removeFromBalance(239001, ba);
+		displayBalance;
+	}
+
+	// Universal
+	public static void blockSites() {
+
+	}
+
+	public static void newUser(String name) {
+		User newUser = new User(name);
+		System.out.println(newUser);
+		users.add(newUser);
+	}
+
+	// TimeManager
+	public static String makePlans(int numericDay, String month, int year, String plans, int beginingHour,
+			int endingHour, int beginingMinute, int endingMinute, boolean blockSites) {
+		Schedule newPlans = new Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, blockSites);
+		Day newDay = new Day(numericDay, month, year);
+		ArrayList<Schedule> compare = newDay.getSchedules();
+		if (compare.contains(newPlans)) {
+			return "You have already made these plans.";
+		} else {
+			if (checkForScheduleOverlap(newDay)) {
+				return "You planned over this time already.";
+			} else {
+				newDay.setSchedules(newPlans);
+				return "Plans added";
+			}
+		}
+	}
+
+	public static boolean checkForScheduleOverlap(Day newDay) {
+		if (currentUser.getScheduledDates().contains(newDay.getMonth())
+				&& currentUser.getScheduledDates().contains(newDay.getNumericDay())) {
+			for (int i = 0; i < currentUser.getScheduledDates().size(); i++) {
+				if (currentUser.getScheduledDates().get(i).getMonth().equals(newDay.getMonth())) {
+					if (currentUser.getScheduledDates().get(i).getNumericDay() == newDay.getNumericDay()) {
+						currentUser.getScheduledDates().get(i).setSchedules(newDay.getSchedules().get(0));
+					}
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	// Budgeter
+	public static int displayBalance(BankAccount account) {
+		return account.getBalance();
+	}
+
+	public static String addToBalance(int addedAmmount, BankAccount account) {
+		if (account.getBalance() < 0 && account.getBalance() + addedAmmount > 0) {
+			account.addToBalance(addedAmmount);
+			return "You are no longer at a negative balance";
+		} else if (account.getBalance() > account.getMinumumBalance()) {
+			account.addToBalance(addedAmmount);
+			return "You are above your minumum budget.";
+		} else {
+			account.addToBalance(addedAmmount);
+			return "The ammount has been added to the account";
+		}
+	}
+
+	public static String removeFromBalance(int ammountRemoved, BankAccount account) {
+		account.removeFromBalance(ammountRemoved);
+		if (account.getBalance() < 0) {
+			return "You have dipped into negative funds";
+		} else if (account.getBalance() < account.getMinumumBalance()) {
+			return "You are now below your alloted minumum balance";
+		} else {
+			return "The funds have been removed";
+		}
+	}
+}
