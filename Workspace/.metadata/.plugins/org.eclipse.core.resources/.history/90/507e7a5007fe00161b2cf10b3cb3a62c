@@ -1,0 +1,30 @@
+package models;
+
+public class Day {
+
+	private int numericDay;
+	private String month;
+
+	public Day(int numericDay, String month) {
+		this.setNumericDay(numericDay);
+		this.setMonth(month);
+	}
+
+	public int getNumericDay() {
+		return numericDay;
+	}
+
+	public void setNumericDay(int numericDay) {
+		this.numericDay = numericDay;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+	
+	
+}

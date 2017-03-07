@@ -1,0 +1,12 @@
+package models;
+
+public class Day {
+	
+	private int numericDay;
+	private String month;
+	
+	public Day(int numericDay, String month){
+		this.numericDay = numericDay;
+		this.month = month;
+	}
+}

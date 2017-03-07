@@ -1,0 +1,8 @@
+package models;
+
+public class Schedule {
+	private String plans;
+	private int hour;
+	private int minute;
+	private boolean blockSites;
+}

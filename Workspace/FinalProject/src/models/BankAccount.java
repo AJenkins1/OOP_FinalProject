@@ -5,11 +5,14 @@ public class BankAccount {
 	private final String bankUserID;
 	private final String bankAccountNumber;
 	private int balance = 0;
+	private int minimumBalance;
+	private boolean blockSites;
 
 	public BankAccount() {
 		bankName = "[Unknown]";
 		bankUserID = "[Unknown]";
 		bankAccountNumber = "[Unknown]";
+		blockSites = false;
 	}
 
 	public BankAccount(String bankName, String bankUserID, String bankAccountNumber) {
@@ -40,12 +43,33 @@ public class BankAccount {
 
 	public int removeFromBalance(int removedAmmount) {
 		balance -= removedAmmount;
+		checkBlockSites();
 		return balance;
+	}
+
+	public void checkBlockSites() {
+		if (balance <= minimumBalance) {
+			blockSites = true;
+		} else if (balance > minimumBalance) {
+			blockSites = false;
+		}
 	}
 
 	public int addToBalance(int addedAmmount) {
 		balance += addedAmmount;
 		return balance;
+	}
+
+	public boolean isBlockSites() {
+		return blockSites;
+	}
+
+	public int getMinumumBalance() {
+		return minimumBalance;
+	}
+
+	public void setMinumumBalance(int minumumBalance) {
+		this.minimumBalance = minumumBalance;
 	}
 
 	@Override
@@ -59,4 +83,5 @@ public class BankAccount {
 		sb.append(balance);
 		return sb.toString();
 	}
+
 }
