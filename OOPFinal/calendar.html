@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script>
+        function planDay() {
+            var noticeMsg = document.getElementById('notice');
+            var PlanDay = document.getElementById('calendarplanday');
+            var CalendarPlanDay = PlanDay.value;
+            noticeMsg.innerHTML = "Day: " + CalendarPlanDay + ".<br/>";
+        }
+    </script>
+    <script>
+        function planMonth() {
+            var noticeMsg = document.getElementById('notice1');
+            var PlanMonth = document.getElementById('calendarplanmonth');
+            var CalendarPlanMonth = PlanMonth.value;
+            noticeMsg.innerHTML = "Month: " + CalendarPlanMonth + ".<br/>";
+        }
+    </script>
+        <script>
+        function planYear() {
+            var noticeMsg = document.getElementById('noticeyear');
+            var PlanYear = document.getElementById('calendarplanyear');
+            var CalendarPlanYear = PlanYear.value;
+            noticeMsg.innerHTML = "Year: " + CalendarPlanYear + ".<br/>";
+        }
+    </script>
+
+    <script>
+        function plan() {
+            var noticeMsg = document.getElementById('notice2');
+            var Plan = document.getElementById('calendarplan');
+            var CalendarPlan = Plan.value;
+            noticeMsg.innerHTML = "Plan: " + CalendarPlan + ".<br/>";
+        }
+    </script>
+
+    <script>
+        function CalendarBeginHour() {
+            var noticeMsg = document.getElementById('notice3');
+            var BeginHour = document.getElementById('calendarbeginhour');
+            var CalendarBeginHour = BeginHour.value;
+            noticeMsg.innerHTML = "Beginning Hour : " + CalendarBeginHour + ":00.<br/>";
+        }
+    </script>
+    <script>
+        function CalendarEndingHour() {
+            var noticeMsg = document.getElementById('notice4');
+            var EndHour = document.getElementById('calendarendinghour');
+            var CalendarEndHour = EndHour.value;
+            noticeMsg.innerHTML = "End Hour : " + CalendarEndHour + ":00.<br/>";
+        }
+    </script>
+        <script>
+        function CalendarBeginMin() {
+            var noticeMsg = document.getElementById('notice5');
+            var BeginMin = document.getElementById('calendarbeginmin');
+            var CalendarBeginMin = BeginMin.value;
+            noticeMsg.innerHTML = "Beginning Minute : " + CalendarBeginMin + ".<br/>";
+        }
+    </script>
+            <script>
+        function CalendarEndMin() {
+            var noticeMsg = document.getElementById('notice6');
+            var EndMin = document.getElementById('calendarendmin');
+            var CalendarEndMin = EndMin.value;
+            noticeMsg.innerHTML = "Ending Minute : " + CalendarEndMin + ".<br/>";
+        }
+    </script>
+    
+       </script>
+            <script>
+        function ReviewPlan() {
+            var noticeMsg = document.getElementById('noticeEnd');
+            var Plan = document.getElementById('calendarplan');
+            var CalendarPlan = Plan.value;
+            var PlanMonth = document.getElementById('calendarplanmonth');
+            var CalendarPlanMonth = PlanMonth.value;
+            var PlanDay = document.getElementById('calendarplanday');
+            var CalendarPlanDay = PlanDay.value;
+             var PlanYear = document.getElementById('calendarplanyear');
+            var CalendarPlanYear = PlanYear.value;
+            var BeginHour = document.getElementById('calendarbeginhour');
+            var CalendarBeginHour = BeginHour.value;
+            var BeginMin = document.getElementById('calendarbeginmin');
+            var CalendarBeginMin = BeginMin.value;
+            var EndHour = document.getElementById('calendarendinghour');
+            var CalendarEndHour = EndHour.value;
+            var EndMin = document.getElementById('calendarendmin');
+            var CalendarEndMin = EndMin.value;
+            noticeMsg.innerHTML = "Plan: " + CalendarPlan + "<br/>" + "Date: " + CalendarPlanMonth + "/" + CalendarPlanDay + "/" + CalendarPlanYear + "<br/>" + "Beginning Time: " + CalendarBeginHour + ":" + CalendarBeginMin + "<br/>" + "Ending Time: " + CalendarEndHour + ":" + CalendarEndMin + "<br/>";
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <form id="calendarDayPlan">
+        Enter The Day For Your Plan:
+        <input type="text" id="calendarplanday" />
+        <br/>
+        <input type="button" value="Submit" onclick="planDay();" />
+    </form>
+    <p id="notice"></p>
+
+    <form id="calendarMonthPlan">
+        Enter The Month For Your Plan:
+        <input type="text" id="calendarplanmonth" />
+        <br/>
+        <input type="button" value="Submit" onclick="planMonth();" />
+    </form>
+    <p id="notice1"></p>
+    
+    <form id="calendarUrstPlan">
+        Enter The Year For Your Plan:
+        <input type="text" id="calendarplanyear" />
+        <br/>
+        <input type="button" value="Submit" onclick="planYear();" />
+    </form>
+    <p id="noticeyear"></p>
+
+    <form id="calendarPlan">
+        Enter The Plan:
+        <input type="text" id="calendarplan" />
+        <br/>
+        <input type="button" value="Submit" onclick="plan();" />
+    </form>
+    <p id="notice2"></p>
+
+    <form id="calendarBeginHour">
+        Enter The Beginning Hour For The Plan:
+        <input type="text" id="calendarbeginhour" />
+        <br/>
+        <input type="button" value="Submit" onclick="CalendarBeginHour();" />
+    </form>
+    <p id="notice3"></p>
+
+    <form id="calendarEndHour">
+        Enter The Ending Hour For The Plan:
+        <input type="text" id="calendarendinghour" />
+        <br/>
+        <input type="button" value="Submit" onclick="CalendarEndingHour();" />
+    </form>
+    <p id="notice4"></p>
+    
+        <form id="calendarBeginMin">
+        Enter The Beginning Minute For The Plan:
+        <input type="text" id="calendarbeginmin" />
+        <br/>
+        <input type="button" value="Submit" onclick="CalendarBeginMin();" />
+    </form>
+    <p id="notice5"></p>
+        <form id="calendarEndMin">
+        Enter The Ending Minute For The Plan:
+        <input type="text" id="calendarendmin" />
+        <br/>
+        <input type="button" value="Submit" onclick="CalendarEndMin();" />
+    </form>
+    <p id="notice6"></p>
+    
+    
+    <h2>Plan:</h2>
+    Press Enter To See Plan: 
+    <input type="button" value="Enter" onclick="ReviewPlan()"/>
+    <p id="noticeEnd"></p>
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Budgeter</title>
+    <script>
+        function usersBankName() {
+            var noticeMsg = document.getElementById('notice');
+            var Bankname = document.getElementById('bankname');
+            var BudgeterUserBankName = Bankname.value;
+            noticeMsg.innerHTML = "Bank Name: " + BudgeterUserBankName + ".<br/>";
+        }
+    </script>
+
+    <script>
+        function usersBankId() {
+            var noticeMsg = document.getElementById('notice1');
+            var BankID = document.getElementById('bankuserid');
+            var BudgeterUserBankId = BankID.value;
+            noticeMsg.innerHTML = "Bank User Id: " + BudgeterUserBankId + ".<br/>";
+        }
+    </script>
+
+    <script>
+        function usersBankBalance() {
+            var noticeMsg = document.getElementById('notice2');
+            var BankBalance = document.getElementById('bankbalance');
+            var BudgeterBankBalance = BankBalance.value;
+            noticeMsg.innerHTML = "Bank Current Balance: " + "$" + BudgeterBankBalance + ".<br/>";
+        }
+    </script>
+
+    <script>
+        function usersBankMinBalance() {
+            var noticeMsg = document.getElementById('notice3');
+            var BankMinBalance = document.getElementById('bankminbalance');
+            var BudgeterBankMinBalance = BankMinBalance.value;
+            noticeMsg.innerHTML = "Bank Minimum Balance: " + "$" + BudgeterBankMinBalance + ".<br/>";
+        }
+    </script>
+    <script>
+        function ReviewBank() {
+            var noticeMsg = document.getElementById('noticeend');
+            var Bankname = document.getElementById('bankname');
+            var BudgeterUserBankName = Bankname.value;
+            var BankID = document.getElementById('bankuserid');
+            var BudgeterUserBankId = BankID.value;
+            var BankBalance = document.getElementById('bankbalance');
+            var BudgeterBankBalance = BankBalance.value;
+            var BankMinBalance = document.getElementById('bankminbalance');
+            var BudgeterBankMinBalance = BankMinBalance.value;
+            noticeMsg.innerHTML = "Bank Name: " + BudgeterUserBankName + "<br/>" + "Bank ID: " + BudgeterUserBankId + "<br/>" + "Current Bank Balance: " + "$" + BudgeterBankBalance + "<br/>" + "Minimum Bank Balance: " + "$" +BudgeterBankMinBalance+ "<br/>";
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+    <form id="enterBankName">
+        Enter Your Bank Name:
+        <input type="text" id="bankname" />
+        <br/>
+        <input type="button" value="Submit" onclick="usersBankName();" />
+    </form>
+    <p id="notice"></p>
+
+    <form id="enterBankUserId">
+        Enter Your Bank ID:
+        <input type="text" id="bankuserid" />
+        <br/>
+        <input type="button" value="Submit" onclick="usersBankId();" />
+    </form>
+    <p id="notice1"></p>
+
+    <form id="bankBalance">
+        Enter Your Bank Balance:
+        <input type="text" id="bankbalance" />
+        <br/>
+        <input type="button" value="Submit" onclick="usersBankBalance();" />
+    </form>
+    <p id="notice2"></p>
+
+    <form id="bankMinBalance">
+        Enter The Minimal Bank Balance You Want:
+        <input type="text" id="bankminbalance" />
+        <br/>
+        <input type="button" value="Submit" onclick="usersBankMinBalance();" />
+    </form>
+    <p id="notice3"></p>
+
+    <h2>Plan:</h2> Press Enter To See Budget Info:
+    <input type="button" value="Enter" onclick="ReviewBank()" />
+    <p id="noticeend"></p>
+
+
+</body>
+
+</body>
+
+
+
+
+
+</html>
