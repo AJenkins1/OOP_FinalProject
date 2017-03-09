@@ -3,17 +3,12 @@ var models;
     var ArrayList = [];
     var Schedule = (function () {
         function Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, blockSites) {
-            this.beginingHour = 0;
-            this.endingHour = 0;
-            this.beginingMinute = 0;
-            this.endingMinute = 0;
-            this.blockSites = false;
-            this.setPlans(plans);
-            this.setBeginingHour(beginingHour);
-            this.setEndingHour(endingHour);
-            this.setBeginingMinute(beginingMinute);
-            this.setEndingMinute(endingMinute);
-            this.setBlockSites(blockSites);
+           this.plans = plans;
+            this.beginingHour = beginingHour;
+            this.endingHour = endingHour;
+            this.beginingMinute = beginingMinute;
+            this.endingMinute = endingMinute;
+            this.blockSites = blockSites;
         }
         Schedule.prototype.getPlans = function () {
             return this.plans;
@@ -55,71 +50,11 @@ var models;
     }());
     models.Schedule = Schedule;
     Schedule["__class"] = "models.Schedule";
-    var User = (function () {
-        function User(name) {
-            this.accounts = (new ArrayList());
-            this.setName(name);
-        }
-        User.prototype.getName = function () {
-            return this.name;
-        };
-        User.prototype.setName = function (name) {
-            if (name !== null && (name.length > 0 || name.length < 0)) {
-                this.name = name;
-            }
-        };
-        User.prototype.getBlockedWebsites = function () {
-            return this.blockedWebsites;
-        };
-        User.prototype.setBlockedWebsites = function (blockedWebsites) {
-            this.blockedWebsites = blockedWebsites;
-        };
-        User.prototype.getAccount = function () {
-            return this.account;
-        };
-        User.prototype.setAccount = function (account) {
-            this.account = account;
-        };
-        User.prototype.getScheduledDates = function () {
-            return this.scheduledDates;
-        };
-        User.prototype.addScheduledDates = function (plans) {
-            this.scheduledDates.add(plans);
-        };
-        User.prototype.removeScheduledDates = function (thisDaysPlans) {
-            if (this.scheduledDates.contains(thisDaysPlans)) {
-                this.scheduledDates.remove(thisDaysPlans);
-            }
-        };
-        User.prototype.addBankAccount = function (bankName, bankUserID) {
-            var newAccount = new BankAccount(bankName, bankUserID);
-            this.accounts.add(newAccount);
-            return "The Account has been added";
-        };
-        User.prototype.removeBankAccount = function (account) {
-            if (this.accounts.contains(account)) {
-                this.accounts.remove(account);
-                return "The account has been removed.";
-            }
-            else {
-                return "This account does not exist with this user.";
-            }
-        };
-        User.prototype.getBankAccount = function () {
-            return this.account;
-        };
-        return User;
-    }());
-    models.User = User;
-    User["__class"] = "models.User";
     var Day = (function () {
         function Day(numericDay, month, year) {
-            this.schedules = (new ArrayList());
-            this.numericDay = 0;
-            this.year = 0;
-            this.setYear(year);
-            this.setNumericDay(numericDay);
-            this.setMonth(month);
+           this.year = year;
+            this.month = month;
+            this.day = day;
         }
         Day.prototype.getNumericDay = function () {
             return this.numericDay;
@@ -156,16 +91,14 @@ var models;
     Day["__class"] = "models.Day";
     var BankAccount = (function () {
         function BankAccount(bankName, bankUserID) {
-            var _this = this;
-            this.balance = 0;
             if (((typeof bankName === 'string') || bankName === null) && ((typeof bankUserID === 'string') || bankUserID === null)) {
                 var __args = Array.prototype.slice.call(arguments);
                 this.balance = 0;
                 this.minimumBalance = 0;
                 this.blockSites = false;
                 (function () {
-                    _this.bankName = bankName;
-                    _this.bankUserID = bankUserID;
+                    this.bankName = bankName;
+                    this.bankUserID = bankUserID;
                 })();
             }
             else if (bankName === undefined && bankUserID === undefined) {
@@ -174,9 +107,9 @@ var models;
                 this.minimumBalance = 0;
                 this.blockSites = false;
                 (function () {
-                    _this.bankName = "[Unknown]";
-                    _this.bankUserID = "[Unknown]";
-                    _this.blockSites = false;
+                    this.bankName = "[Unknown]";
+                    this.bankUserID = "[Unknown]";
+                    this.blockSites = false;
                 })();
             }
             else throw new Error('invalid overload');
@@ -296,33 +229,3 @@ var models;
     models.Logic = Logic;
     Logic["__class"] = "models.Logic";
 })(models || (models = {}));
-
-
-function CreateBankAccount(){
-    var name = document.getElementById('BudgeterUserBankName');
-    var bankUserID = document.getElementById('BudgeterUserBankId    ');
-    var balance = document.getElementById('BudgeterBankBalance');
-    var minBalance = document.getElementById('BudgeterBankMinBalance');
-    models.BankAccount(name, bankUserID);
-    models.BankAccount.prototype.setBalance(balance);
-    models.BankAccount.prototype.setMinumumBalance(minBalance);
-}
-
-function CreateDay(){
-    var day = document.getElementById('CalendarPlanDay');
-    var month = document.getElementById('CalendarPlanMonth');
-    var year = document.getElementById('CalendarPlanYear');
-    models.Day(day, month, year);
-}
-function CreateSchedule(){
-    var plans = document.getElementById('CalendarPlan');
-    var beginingHour = document.getElementById('CalendarBeginHour');
-    var endingHour = document.getElementById('CalendarEndHour');
-    var beginingMinute = document.getElementById('CalendarBeginMin');
-    var endingMinute = document.getElementById('CalendarEndMin');
-        models.Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, true);
-    }
-
-CreateBankAccount();
-CreateDay();
-CreateSchedule();

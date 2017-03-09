@@ -54,7 +54,17 @@
         }
         
     </script>
-<script src="script.js"></script>
+<script src="script.js">function CreateBankAccount(){
+    var name = document.getElementById('BudgeterUserBankName');
+    var bankUserID = document.getElementById('BudgeterUserBankId    ');
+    var balance = document.getElementById('BudgeterBankBalance');
+    var minBalance = document.getElementById('BudgeterBankMinBalance');
+    models.BankAccount(name, bankUserID);
+    models.BankAccount.prototype.setBalance(balance);
+    models.BankAccount.prototype.setMinumumBalance(minBalance);
+}
+    CreateBankAccount();
+</script>
 </head>
 
 <body>
