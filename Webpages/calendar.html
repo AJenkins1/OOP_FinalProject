@@ -92,7 +92,23 @@
             noticeMsg.innerHTML = "Plan: " + CalendarPlan + "<br/>" + "Date: " + CalendarPlanMonth + "/" + CalendarPlanDay + "/" + CalendarPlanYear + "<br/>" + "Beginning Time: " + CalendarBeginHour + ":" + CalendarBeginMin + "<br/>" + "Ending Time: " + CalendarEndHour + ":" + CalendarEndMin + "<br/>";
         }
     </script>
-    
+    <script src = "script.js">function CreateDay(){
+    var day = document.getElementById('CalendarPlanDay');
+    var month = document.getElementById('CalendarPlanMonth');
+    var year = document.getElementById('CalendarPlanYear');
+    models.Day(day, month, year);
+}
+function CreateSchedule(){
+    var plans = document.getElementById('CalendarPlan');
+    var beginingHour = document.getElementById('CalendarBeginHour');
+    var endingHour = document.getElementById('CalendarEndHour');
+    var beginingMinute = document.getElementById('CalendarBeginMin');
+    var endingMinute = document.getElementById('CalendarEndMin');
+        models.Schedule(plans, beginingHour, endingHour, beginingMinute, endingMinute, true);
+    }
+        CreateDay();
+        CreateSchedule();
+</script>
 </head>
 
 <body>
